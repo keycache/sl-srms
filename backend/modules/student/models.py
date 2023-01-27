@@ -1,8 +1,8 @@
 from django.db import models
 
-from core.models import UUIDModel
+from core.models import UUIDModel, DatesModel
 
-class Student(UUIDModel):
+class Student(UUIDModel, DatesModel):
     class Meta:
         db_table = "student"
         verbose_name = "Student"
