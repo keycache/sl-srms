@@ -1,6 +1,7 @@
 from django.db import models
 
-from core.models import UUIDModel, DatesModel
+from core.models import DatesModel, UUIDModel
+
 
 class Student(UUIDModel, DatesModel):
     class Meta:
