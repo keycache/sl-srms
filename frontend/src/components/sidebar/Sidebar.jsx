@@ -15,6 +15,10 @@ const SIDEBAR_DATA = [
     title: "Courses",
     path: "/courses",
   },
+  {
+    title: "Results",
+    path: "/results",
+  },
 ];
 export default function Navbar() {
   const [sidebar, setSidebar] = useState(false);

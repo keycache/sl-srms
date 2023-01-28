@@ -29,8 +29,5 @@
   - [x] connect `url` -> `view` <-> `serializer` <-> `controller` <-> `model`
 - [x] cors
 - [ ] handle pagination(?)
-- [ ] Refactor serializer utility code `get_serializer`
-
-- [x] cors
-- [ ] handle pagination(?)
+- [ ] optimize query(`prefetch` for `result`).
 - [ ] Refactor serializer utility code `get_serializer`

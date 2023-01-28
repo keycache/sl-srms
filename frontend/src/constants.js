@@ -1,0 +1,9 @@
+export const RESULT = "result",
+  STUDENT = "student",
+  COURSE = "course",
+  SCORE = "score",
+  SUCCESS = "success",
+  NAME = "name",
+  FIRST_NAME = "firstName",
+  LAST_NAME = "lastName",
+  GRADES = ["", "A", "B", "C", "D", "E", "F"];
