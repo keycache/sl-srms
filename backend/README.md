@@ -16,7 +16,11 @@
   - [x] handle validations
   - [x] handle `GET` and `POST`
   - [x] connect `url` -> `view` <-> `serializer` <-> `controller` <-> `model`
-  - [ ] handle server-side validation
+  - [ ] handle server-side validation fir DOB
+- [x] setup `courses` app
+  - [x] handle validations
+  - [x] handle `GET` and `POST`
+  - [x] connect `url` -> `view` <-> `serializer` <-> `controller` <-> `model`
 - [x] cors
 - [ ] handle pagination(?)
 - [ ] Refactor serializer utility code `get_serializer`
