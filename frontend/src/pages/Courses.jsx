@@ -50,7 +50,7 @@ export default function Courses() {
           clearForm(e.target);
         });
     } else {
-      setErrorMessage("Course name canot be empty.");
+      setErrorMessage("Course name cannot be empty.");
     }
   };
 

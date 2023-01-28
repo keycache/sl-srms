@@ -63,7 +63,7 @@ export default function Students() {
         });
     } else {
       setErrorMessage(
-        "First and Last Name canot be empty.\nStudent's DOB can not be less than 10 years"
+        "First and Last Name cannot be empty.\nStudent's DOB can not be less than 10 years"
       );
     }
   };
