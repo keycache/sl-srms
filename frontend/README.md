@@ -1,4 +1,13 @@
-# The front end for `Student Result Management System`
+# The UI for `Student Result Management System`
+
+## Summary
+
+- Implementation in with `vite` in `react`
+- Styling with `tailwind`
+- `Student Result Management System` Pages
+- Student Entry
+- Course Entry
+- Result Entry
 
 ## TODO
 
