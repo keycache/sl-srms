@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "corsheaders",
     "modules.student.apps.StudentConfig",
 ]
 
@@ -50,6 +51,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
 
 ROOT_URLCONF = "core.urls"
@@ -134,3 +137,7 @@ REST_FRAMEWORK = {
     "DEFAULT_PARSER_CLASSES": ["core.parsers.CaseParser"],
     "NON_FIELD_ERRORS_KEY": "errors",
 }
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+]

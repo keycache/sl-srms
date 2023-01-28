@@ -7,10 +7,10 @@ from .models import Student
 
 
 class StudentSerializer(BaseSerializer):
-    id = serializers.UUIDField(required=False, read_only=True)
-    first_name = serializers.CharField(required=True, write_only=True)
-    last_name = serializers.CharField(required=True, write_only=True)
-    date_of_birth = serializers.DateField(required=True, write_only=True)
+    # id = serializers.UUIDField(required=False, read_only=True)
+    first_name = serializers.CharField(required=True)
+    last_name = serializers.CharField(required=True)
+    date_of_birth = serializers.DateField(required=True)
 
     class Meta:
         model = Student
