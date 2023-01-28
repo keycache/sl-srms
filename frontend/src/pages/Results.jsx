@@ -85,7 +85,6 @@ export default function Results() {
         .then((out) => {
           notify("Successfully added result record", "success");
           const data = processResult(out.data);
-          console.log("===============", data);
           setResultData([...structuredClone(resultData), data]);
           clearForm(e.target);
         });
@@ -149,7 +148,10 @@ export default function Results() {
         </div>
       </form>
       <div>
-        <div className="text-4xl font-bold underline"> All students data</div>
+        <div className="text-4xl font-bold underline">
+          {" "}
+          All student's results
+        </div>
         <Table tbodyData={resultData} theadData={FORM_FIELDS} />
       </div>
       <Toaster position="top-right" />

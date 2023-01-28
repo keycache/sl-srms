@@ -44,8 +44,6 @@ export default function Courses() {
         .then((res) => res.json())
         .then((out) => {
           notify("Successfully added course record", "success");
-          console.log(courseData);
-          console.log(out.data);
           setCourseData([...structuredClone(courseData), out.data]);
           clearForm(e.target);
         });
@@ -56,7 +54,7 @@ export default function Courses() {
 
   return (
     <div className="flex flex-col items-center h-screen space-y-10 w-4/5">
-      <div className="bold font-extrabold">Add student</div>
+      <div className="bold font-extrabold">Add Course</div>
       <form onSubmit={handleSubmit}>
         <div className="flex-row space-y-2 align-middle">
           <div className="flex-col space-x-3">

@@ -56,8 +56,6 @@ export default function Students() {
         .then((res) => res.json())
         .then((out) => {
           notify("Successfully added student record", "success");
-          console.log(studentData);
-          console.log(out.data);
           setStudentData([...structuredClone(studentData), out.data]);
           clearForm(e.target);
         });
