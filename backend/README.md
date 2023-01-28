@@ -21,6 +21,16 @@
   - [x] handle validations
   - [x] handle `GET` and `POST`
   - [x] connect `url` -> `view` <-> `serializer` <-> `controller` <-> `model`
+- [x] setup `result` app
+  - [x] handle validations
+    - [x] valid `uuid`s for `student` and `result`
+    - [x] valid score
+  - [x] handle `GET` and `POST`
+  - [x] connect `url` -> `view` <-> `serializer` <-> `controller` <-> `model`
+- [x] cors
+- [ ] handle pagination(?)
+- [ ] Refactor serializer utility code `get_serializer`
+
 - [x] cors
 - [ ] handle pagination(?)
 - [ ] Refactor serializer utility code `get_serializer`

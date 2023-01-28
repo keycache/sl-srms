@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "modules.student.apps.StudentConfig",
     "modules.course.apps.CourseConfig",
+    "modules.result.apps.ResultConfig",
 ]
 
 MIDDLEWARE = [
