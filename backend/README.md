@@ -19,3 +19,4 @@
   - [ ] handle server-side validation
 - [x] cors
 - [ ] handle pagination(?)
+- [ ] Refactor serializer utility code `get_serializer`

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "corsheaders",
     "modules.student.apps.StudentConfig",
+    "modules.course.apps.CourseConfig",
 ]
 
 MIDDLEWARE = [
