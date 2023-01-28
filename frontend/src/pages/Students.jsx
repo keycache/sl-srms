@@ -85,8 +85,13 @@ export default function Students() {
             <label htmlFor={DOB}>Date of Birth</label>
             <input className="border-2" name={DOB} type={"date"}></input>
           </div>
-          <input className="border-2" type="submit" />
-          <div className="bold text-red-500 whitespace-pre">{errorMessage}</div>
+          <input
+            className="border-2 bg-blue-600 text-white px-3 py-1 rounded-lg"
+            type="submit"
+          />
+          <div className="bold text-red-500 whitespace-pre h-14">
+            {errorMessage}
+          </div>
         </div>
       </form>
       <div>

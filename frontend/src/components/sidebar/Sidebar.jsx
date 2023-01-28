@@ -6,12 +6,14 @@ const SIDEBAR_DATA = [
   {
     title: "Home",
     path: "/",
-    cName: "nav-text",
   },
   {
     title: "Students",
     path: "/students",
-    cName: "nav-text",
+  },
+  {
+    title: "Courses",
+    path: "/courses",
   },
 ];
 export default function Navbar() {
@@ -34,7 +36,7 @@ export default function Navbar() {
 
           {SIDEBAR_DATA.map((item, index) => {
             return (
-              <li key={index} className={item.cName}>
+              <li key={index}>
                 <Link to={item.path}>
                   <span>{item.title}</span>
                 </Link>
