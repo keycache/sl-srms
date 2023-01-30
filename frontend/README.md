@@ -9,11 +9,17 @@
 - Course Entry
 - Result Entry
 
+## How to run
+
+- Build the `docker` image. `docker build -t sf-srms-ui:latest -f ./Dockerfile .`
+- Run the image. `docker run -p 8006:8006 --name c-sf-srms-ui sf-srms-ui:latest`
+
 ## TODO
 
 - [x] init vite repo setup
 - [x] tailwind setup
 - [x] setup routing
+- [x] integation with docker
 - [ ] refactor hard coded strings
 - [ ] Clean up the side bar
 - [ ] Update individual page details

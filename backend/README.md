@@ -9,6 +9,11 @@
 - leveraged `sqlite3` as `db`
 - the queries for `db` managed through `django orm`.
 
+## How to run
+
+- Build the `docker` image. `docker build -t sf-srms-api:latest -f ./Dockerfile .`
+- Run the image. `docker run -p 8006:8006 --name c-sf-srms-api sf-srms-api:latest`
+
 ## TODO
 
 - [x] setup virtual env, with dependencies
@@ -37,6 +42,7 @@
   - [x] handle `GET` and `POST`
   - [x] connect `url` -> `view` <-> `serializer` <-> `controller` <-> `model`
 - [x] cors
-- [ ] handle pagination(?)
+- [x] integation with docker
 - [ ] optimize query(`prefetch` for `result`).
 - [ ] Refactor serializer utility code `get_serializer`
+- [ ] handle pagination(?)
