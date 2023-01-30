@@ -5,13 +5,14 @@ import Home from "./pages/Home";
 import Students from "./pages/Students";
 import Courses from "./pages/Courses";
 import Results from "./pages/Results";
+import { SIDEBAR_DATA } from "./constants";
 
 function App() {
   return (
     <>
       <Router>
         <div className="flex">
-          <Sidebar />
+          <Sidebar data={SIDEBAR_DATA} />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/students" element={<Students />} />

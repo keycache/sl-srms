@@ -17,3 +17,22 @@ export const SUCCESS_ADD_STUDENT = "Successfully added student record",
   ERROR_STUDENT_NAME = "First and Last Name cannot be empty.",
   ERROR_STUDENT_DOB = "Student's DOB can not be less than 10 years",
   BAD_RESPONSE = "Bad Response";
+
+export const SIDEBAR_DATA = [
+  {
+    title: "Home",
+    path: "/",
+  },
+  {
+    title: "Students",
+    path: "/students",
+  },
+  {
+    title: "Courses",
+    path: "/courses",
+  },
+  {
+    title: "Results",
+    path: "/results",
+  },
+];

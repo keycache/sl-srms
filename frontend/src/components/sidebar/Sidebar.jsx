@@ -2,25 +2,7 @@ import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 
-const SIDEBAR_DATA = [
-  {
-    title: "Home",
-    path: "/",
-  },
-  {
-    title: "Students",
-    path: "/students",
-  },
-  {
-    title: "Courses",
-    path: "/courses",
-  },
-  {
-    title: "Results",
-    path: "/results",
-  },
-];
-export default function Navbar() {
+export default function Navbar({ data }) {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
@@ -33,7 +15,7 @@ export default function Navbar() {
             <Link to="#" className="menu-bars"></Link>
           </li>
 
-          {SIDEBAR_DATA.map((item, index) => {
+          {data.map((item, index) => {
             return (
               <li className="cursor-pointer p-4 hover:bg-slate-400" key={index}>
                 <Link to={item.path}>
