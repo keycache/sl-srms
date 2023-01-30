@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { post, get } from "../helper/api";
+import { post, get, handleResponse } from "../helper/api";
 import Table from "../components/sidebar/Table";
 import { Toaster } from "react-hot-toast";
 import { notify } from "../helper/notification";
-
-const API_URL = import.meta.env.VITE_API_URL;
-
-const FIRST_NAME = "firstName",
-  LAST_NAME = "lastName",
-  DOB = "dateOfBirth";
+import {
+  ERROR,
+  ERROR_ADD_STUDENT,
+  ERROR_STUDENT_DOB,
+  ERROR_STUDENT_NAME,
+  STUDENT,
+  SUCCESS,
+  SUCCESS_ADD_STUDENT,
+  FIRST_NAME,
+  LAST_NAME,
+  DOB,
+  API_URL,
+} from "../constants";
 
 const FORM_FIELDS = [FIRST_NAME, LAST_NAME, DOB];
 
@@ -16,13 +23,23 @@ export default function Students() {
   const [errorMessage, setErrorMessage] = useState("");
   const [studentData, setStudentData] = useState([]);
 
-  // {firstName: 'Jon', lastName:'Doe', dateOfBirth: '2022-12-01'}
   useEffect(() => {
     // TODO handle the errors gracefully
-    get(`${API_URL}/student/`)
-      .then((res) => res.json())
+
+    get(`${API_URL}/${STUDENT}/`)
+      .then((res) => {
+        const [message, response] = handleResponse(res);
+        if (message) {
+          notify(ERROR_ADD_STUDENT, ERROR);
+        } else {
+          return response.json();
+        }
+      })
       .then((out) => {
-        setStudentData(out.data);
+        out && setStudentData(out.data);
+      })
+      .catch((error) => {
+        notify(ERROR_ADD_STUDENT, ERROR);
       });
   }, []);
 
@@ -52,17 +69,15 @@ export default function Students() {
 
     if (validate(data)) {
       setErrorMessage("");
-      post(`${API_URL}/student/`, data)
+      post(`${API_URL}/${STUDENT}/`, data)
         .then((res) => res.json())
         .then((out) => {
-          notify("Successfully added student record", "success");
+          notify(SUCCESS_ADD_STUDENT, SUCCESS);
           setStudentData([...structuredClone(studentData), out.data]);
           clearForm(e.target);
         });
     } else {
-      setErrorMessage(
-        "First and Last Name cannot be empty.\nStudent's DOB can not be less than 10 years"
-      );
+      setErrorMessage(`${ERROR_STUDENT_NAME}\n${ERROR_STUDENT_DOB}`);
     }
   };
 

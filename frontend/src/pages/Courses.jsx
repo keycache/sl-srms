@@ -3,20 +3,17 @@ import { post, get } from "../helper/api";
 import Table from "../components/sidebar/Table";
 import { Toaster } from "react-hot-toast";
 import { notify } from "../helper/notification";
+import { API_URL, COURSE, NAME } from "../constants";
 
-const API_URL = import.meta.env.VITE_API_URL;
-const API_COURSE = "course";
-const NAME = "name";
 const FORM_FIELDS = [NAME];
 
 export default function Courses() {
   const [errorMessage, setErrorMessage] = useState("");
   const [courseData, setCourseData] = useState([]);
 
-  // {firstName: 'Jon', lastName:'Doe', dateOfBirth: '2022-12-01'}
   useEffect(() => {
     // TODO handle the errors gracefully
-    get(`${API_URL}/${API_COURSE}/`)
+    get(`${API_URL}/${COURSE}/`)
       .then((res) => res.json())
       .then((out) => {
         setCourseData(out.data);
@@ -33,14 +30,14 @@ export default function Courses() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const fd = new FormData(e.target) does not work. need to investigate
+    // const fd = new FormData(e.target) //does not work. need to investigate
     const data = {
       [NAME]: e.target[NAME].value,
     };
 
     if (validate(data)) {
       setErrorMessage("");
-      post(`${API_URL}/${API_COURSE}/`, data)
+      post(`${API_URL}/${COURSE}/`, data)
         .then((res) => res.json())
         .then((out) => {
           notify("Successfully added course record", "success");

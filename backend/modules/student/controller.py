@@ -17,7 +17,7 @@ class StudentController(BaseController):
             )
 
     def get_students(*args, **kwargs) -> Iterable[Student]:
-        return Student.objects.all()
+        return Student.objects.all().order_by("-first_name")
 
 
 student_controller = StudentController()

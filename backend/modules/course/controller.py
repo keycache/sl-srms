@@ -17,7 +17,7 @@ class CourseController(BaseController):
             )
 
     def get_courses(*args, **kwargs) -> Iterable[Course]:
-        return Course.objects.all()
+        return Course.objects.all().order_by("name")
 
 
 course_controller = CourseController()
