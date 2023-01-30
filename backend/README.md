@@ -11,8 +11,10 @@
 
 ## How to run
 
-- Build the `docker` image. `docker build -t sf-srms-api:latest -f ./Dockerfile .`
-- Run the image. `docker run -p 8006:8006 --name c-sf-srms-api sf-srms-api:latest`
+- Build the `docker` image.
+  > `docker build -t sf-srms-api:latest -f ./Dockerfile .`
+- Run the image.
+  > `docker run -p 8006:8006 --name c-sf-srms-api sf-srms-api:latest`
 
 ## TODO
 
